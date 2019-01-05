@@ -34,7 +34,6 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.service.notification.ZenModeConfig;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.systemui.R;
@@ -191,34 +190,6 @@ public class KeyguardSliceProvider extends SliceProvider implements
                 & NotificationManager.Policy.SUPPRESSED_EFFECT_NOTIFICATION_LIST) != 0;
         return mZenModeController.getZen() != Settings.Global.ZEN_MODE_OFF
                 && suppressingNotifications;
-    }
-
-    private WeatherClient mWeatherClient;
-    private WeatherClient.WeatherInfo mWeatherInfo;
-
-    protected void addWeather(ListBuilder builder) {
-        if (!WeatherClient.isAvailable(getContext()) || mWeatherInfo == null || mWeatherInfo.getStatus() != WeatherClient.WEATHER_UPDATE_SUCCESS) {
-            return;
-        }
-        if (mWeatherInfo.getWeatherConditionImage() == 0){
-            Log.d("WeatherClient", "addWeather: Not adding because weather condition image is unknown");
-            return;
-        }
-        int temperature = mWeatherInfo.getTemperature(!aosipUtils.mccCheck(getContext()));
-        String temperatureText = aosipUtils.mccCheck(getContext()) ?
-                Integer.toString(temperature) + "°F" :
-                Integer.toString(temperature) + "°C";
-        Icon conditionIcon = Icon.createWithResource(getContext(), mWeatherInfo.getWeatherConditionImage());
-        RowBuilder weatherRowBuilder = new RowBuilder(builder, mWeatherUri)
-                .setTitle(temperatureText)
-                .addEndItem(conditionIcon);
-        builder.addRow(weatherRowBuilder);
-    }
-
-    @Override
-    public void onWeatherUpdated(WeatherClient.WeatherInfo weatherInfo) {
-        mWeatherInfo = weatherInfo;
-        mContentResolver.notifyChange(mSliceUri, null /* observer */);
     }
 
     @Override
