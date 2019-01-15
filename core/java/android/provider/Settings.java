@@ -4804,15 +4804,6 @@ public final class Settings {
         public static final String RECENTS_ICON_PACK = "recents_icon_pack";
 
         /**
-         * Status bar brightness control.
-         * @hide
-         */
-        public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
-
-        /** @hide */
-        public static final Validator STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
          * Custom Ambient tilt gesture
          * @hide
          */
@@ -5031,7 +5022,6 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_DISPLAY,
             STATUSBAR_CLOCK_DATE_STYLE,
             STATUSBAR_CLOCK_DATE_FORMAT,
-            STATUS_BAR_BRIGHTNESS_CONTROL,
             VOLUME_KEYS_CONTROL_RING_TONE,
             LOCK_QS_DISABLED,
             USE_OLD_MOBILETYPE,
@@ -5183,7 +5173,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_DISPLAY);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_STYLE);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_DATE_FORMAT);
-            PRIVATE_SETTINGS.add(STATUS_BAR_BRIGHTNESS_CONTROL);
             PRIVATE_SETTINGS.add(LOCK_QS_DISABLED);
             PRIVATE_SETTINGS.add(SCREENSHOT_DEFAULT_MODE);
             PRIVATE_SETTINGS.add(SWAP_VOLUME_BUTTONS);
@@ -5314,7 +5303,6 @@ public final class Settings {
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_DISPLAY, STATUSBAR_CLOCK_DATE_DISPLAY_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_STYLE, STATUSBAR_CLOCK_DATE_STYLE_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_FORMAT, STATUSBAR_CLOCK_DATE_FORMAT_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_BRIGHTNESS_CONTROL, STATUS_BAR_BRIGHTNESS_CONTROL_VALIDATOR);
             VALIDATORS.put(LOCK_QS_DISABLED, LOCK_QS_DISABLED_VALIDATOR);
             VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
             VALIDATORS.put(VOLUME_KEYS_CONTROL_RING_TONE,VOLUME_KEYS_CONTROL_RING_TONE_VALIDATOR);
