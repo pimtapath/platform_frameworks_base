@@ -1272,7 +1272,7 @@
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">102</integer>
+    <integer name="config_screenBrightnessSettingDefault">60</integer>
 
     <!-- Default screen brightness for VR setting. -->
     <integer name="config_screenBrightnessForVrSettingDefault">86</integer>
@@ -3353,7 +3353,7 @@
     <bool name="enable_pbap_pce_profile">false</bool>
 
     <!-- Default data warning level in mb -->
-    <integer name="default_data_warning_level_mb">2048</integer>
+    <integer name="default_data_warning_level_mb">16000</integer>
 
     <!-- When true, indicates that the vendor's IMS implementation requires a workaround when
      sending a request to enable or disable the camera while the video session is also
